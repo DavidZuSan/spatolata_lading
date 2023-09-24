@@ -15,7 +15,7 @@ const NavBar = () => {
         <div className="flex items-center space-x-2">
           <PhoneIcon />
           <span className="text-3xl font-regular text-menuText font-italianno">
-            Call for Reservation: (858)774-7576
+            +39 3488002083
           </span>
         </div>
 
@@ -25,7 +25,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
         >
           <button className="text-1xl font-medium mr-10 text-menuText font-montserrat px-4 py-2 rounded-full border-2 border-menuText hover:bg-menuText hover:text-white transition-all duration-300 shadow-md">
-            Visit our Gelato Shop
+            Visit our
           </button>
         </a>
       </div>
