@@ -1,4 +1,7 @@
 import { useState } from "react";
+import ticketImage from "./images/nine_ice_cream.webp";
+import logoImage from "../../assets/images/logo_spatolata.png";
+import "./heroSection.css";
 
 const DiscountTicket = () => {
   const [email, setEmail] = useState("");
@@ -6,20 +9,17 @@ const DiscountTicket = () => {
   const handleEmailSubmit = async (event) => {
     event.preventDefault();
 
-    const url = "https://us6.api.mailchimp.com/3.0/lists/a7f5d58cfa/members";
+    const url = "/.netlify/functions/subscribe";
 
     const data = {
       email_address: email,
-      status: "subscribed",
     };
 
     try {
-      // Realizar la solicitud POST a la API de Mailchimp usando fetch
       const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `apikey 957a569dc88bfdc501c8b8a058b39211-us6`,
         },
         body: JSON.stringify(data),
       });
@@ -27,27 +27,51 @@ const DiscountTicket = () => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
+
       console.log("Suscripción exitosa");
     } catch (error) {
       console.error("Hubo un error al suscribir el correo electrónico", error);
     }
+
+    setEmail("");
   };
 
   return (
-    <div className="ticket-container">
-      <div className="ticket-header">
-        <h2>Get a Discount!</h2>
+    <div
+      className="flex items-stretch justify-center mx-auto mb-8 overflow-hidden rounded-lg shadow-xl bg-gradient-to-r from-orange-300 to-orange-500/60 font-montserrat"
+      style={{ width: "65%", height: "300px" }}
+    >
+      <div className="flex-shrink-0 w-1/3 h-full overflow-hidden rounded-l-lg">
+        <img
+          src={ticketImage}
+          alt="Ice Creams Ticket"
+          className="w-full h-full object-cover"
+        />
       </div>
-      <div className="ticket-body">
-        <p>Subscribe to our newsletter and get a special discount!</p>
-        <form onSubmit={handleEmailSubmit}>
+      <div className="flex-grow py-6 px-10">
+        <div className="text-center mb-4">
+          <img src={logoImage} alt="Logo" className="w-16 h-auto mx-auto" />
+        </div>
+        <div className="text-center">
+          <p className="text-darkgray mb-4 font-montserrat">
+            Subscribe to our newsletter and get
+            <span className="font-bold text-burgundy"> special discounts!</span>
+          </p>
+        </div>
+        <form onSubmit={handleEmailSubmit} className="flex flex-col">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
+            className="p-2 rounded border focus:outline-none focus:border-bodyText mb-4 text-center bg-white text-bodyText"
           />
-          <button type="submit">Subscribe</button>
+          <button
+            type="submit"
+            className="bg-darkgray text-white font-bold py-2 px-4 rounded hover:bg-menuText transition-all duration-300"
+          >
+            Subscribe
+          </button>
         </form>
       </div>
     </div>

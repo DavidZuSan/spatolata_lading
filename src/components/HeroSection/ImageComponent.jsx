@@ -1,6 +1,6 @@
-import smallImage from "../../assets/images/ice_cream_small.webp";
-import mediumImage from "../../assets/images/ice_cream_medium.webp";
-import largeImage from "../../assets/images/ice_cream_large.webp";
+import smallImage from "./images/ice_cream_small.webp";
+import mediumImage from "./images/ice_cream_medium.webp";
+import largeImage from "./images/ice_cream_large.webp";
 
 const ImageComponent = () => {
   return (

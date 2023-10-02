@@ -13,11 +13,11 @@ export default {
         extrabold: 800,
       },
       colors: {
-        menuText: "#8C1B24", // Texto Menú
-        bodyText: "#333333", // Texto normal
-        extraText: "#EE9322", // Texto Secundario
+        burgundy: "#8C1B24", // Texto Menú
+        darkgray: "#333333", // Texto normal
+        highlightOrange: "#EE9322", // Texto Secundario
         background: "#F2F2F2", // Fondo
-        navbar: "#F2E0BD", // Menú (color del Navbar)
+        navbar: "#E3D2B1", // Menú (color del Navbar)
       },
     },
     screens: {

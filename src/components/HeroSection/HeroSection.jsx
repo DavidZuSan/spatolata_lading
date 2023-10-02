@@ -3,21 +3,19 @@ import ImageComponent from "./ImageComponent";
 
 const HeroSection = () => {
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center pt-0 md:pt-8 p-16 pb-2 mb-4 hero-background">
-      <div className="flex flex-row w-full items-center justify-center">
+    <div className="mx-auto flex flex-col items-center pt-0 md:pt-4 p-4 pb-2 mb-4">
+      <div className="flex flex-row w-full items-start justify-center font-montserrat">
         <div className="w-full md:w-2/5 flex flex-col items-start mr-4">
-          <h1 className="text-5xl font-bold text-bodyText mb-3">Enjoy Your</h1>
-          <h1 className="text-5xl font-bold text-menuText mb-3"> Piece of</h1>
-          <h1 className="text-5xl font-bold text-extraText mb-8"> Paradise.</h1>
-          <p className="text-1xl font-bold text-bodyText">
+          <h1 className="text-5xl font-bold text-darkgray mb-3">Enjoy Your</h1>
+          <h1 className="text-5xl font-bold text-burgundy mb-3"> Piece of</h1>
+          <h1 className="text-5xl font-bold text-highlightOrange mb-8">
+            Paradise.
+          </h1>
+          <p className="text-1xl font-bold text-darkgray">
             Ice Cream taste better when you eat it with your family and friends.
           </p>
-          <a
-            href="https://deliveroo.it/en/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="bg-menuText text-[#F2F2D2] px-4 py-2 rounded-xl mt-4 order-button shadow-md">
+          <a target="_blank" rel="noopener noreferrer">
+            <button className="bg-burgundy text-white px-4 py-2 rounded-xl mt-4 order-button shadow-md">
               Order Now
             </button>
           </a>

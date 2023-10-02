@@ -1,0 +1,29 @@
+.bg-navbar {
+  position: relative;
+  padding-top: 160px;
+}
+
+.custom-shape-divider-top-1696079144 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1696079144 svg {
+  position: relative;
+  display: block;
+  width: calc(246% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-top-1696079144 .shape-fill {
+  fill: #8c1b24;
+}
+
+.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+}
