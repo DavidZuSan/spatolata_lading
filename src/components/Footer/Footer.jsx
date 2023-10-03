@@ -1,12 +1,14 @@
 import Wave from "./Wave";
-import PhoneIcon from "../../assets/icons/PhoneIcon";
 import ContactLink from "../ReusableComponents/ContactLink";
 import "./footer.css";
-import MailIcon from "../../assets/icons/MailIcon";
-import InstagramIcon from "../../assets/icons/InstagramIcon";
-import FacebookIcon from "../../assets/icons/FacebookIcon";
-import MapIcon from "../../assets/icons/MapIcon";
-import ClockIcon from "../../assets/icons/ClockIcon";
+import {
+  ClockIcon,
+  FacebookIcon,
+  InstagramIcon,
+  MailIcon,
+  MapIcon,
+  PhoneIcon,
+} from "../../assets/icons";
 
 const Footer = () => {
   return (

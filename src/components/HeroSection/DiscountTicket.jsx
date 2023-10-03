@@ -36,9 +36,37 @@ const DiscountTicket = () => {
     setEmail("");
   };
 
+  const handleRippleEffect = (event) => {
+    let button = event.currentTarget;
+
+    let ripple = document.createElement("span");
+    ripple.classList.add("ripple");
+
+    let rect = button.getBoundingClientRect();
+    let size = Math.max(rect.width, rect.height);
+    let top = event.clientY - rect.top - size / 2;
+    let left = event.clientX - rect.left - size / 2;
+
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.top = `${top}px`;
+    ripple.style.left = `${left}px`;
+
+    button.appendChild(ripple);
+
+    ripple.addEventListener("animationend", () => {
+      ripple.remove();
+    });
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+    }
+  };
+
   return (
     <div
-      className="flex items-stretch justify-center mx-auto mb-8 overflow-hidden rounded-lg shadow-xl bg-gradient-to-r from-orange-300 to-orange-500/60 font-montserrat"
+      className="flex items-stretch justify-center mx-auto mb-8 mt-16 overflow-hidden rounded-lg shadow-xl bg-gradient-to-r from-orange-300 to-orange-500/60 font-montserrat"
       style={{ width: "65%", height: "300px" }}
     >
       <div className="flex-shrink-0 w-1/3 h-full overflow-hidden rounded-l-lg">
@@ -63,11 +91,13 @@ const DiscountTicket = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onKeyDown={handleKeyDown}
             placeholder="Enter your email"
             className="p-2 rounded border focus:outline-none focus:border-bodyText mb-4 text-center bg-white text-bodyText"
           />
           <button
             type="submit"
+            onClick={handleRippleEffect}
             className="bg-darkgray text-white font-bold py-2 px-4 rounded hover:bg-menuText transition-all duration-300"
           >
             Subscribe
