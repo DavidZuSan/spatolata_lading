@@ -37,6 +37,8 @@ exports.handler = async (event) => {
 
     // Verificar si la respuesta es exitosa
     if (!response.ok) {
+      const errorResponse = await response.json();
+      console.error("Mailchimp error", errorResponse);
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
