@@ -14,3 +14,21 @@ body {
     rgba(242, 242, 242, 1) 100%
   );
 }
+
+.scrollToTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px 20px;
+
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scrollToTopButton:hover {
+  opacity: 0.8;
+}
