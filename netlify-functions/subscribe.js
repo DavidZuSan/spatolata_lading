@@ -1,5 +1,4 @@
 const apikey = process.env.MAILCHIMP_API_KEY;
-const dc = process.env.MAILCHIMP_DC;
 
 const fetch = require("node-fetch");
 
