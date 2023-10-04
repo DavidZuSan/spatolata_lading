@@ -2,7 +2,7 @@ const apikey = process.env.MAILCHIMP_API_KEY;
 
 const fetch = require("node-fetch");
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   // Asegurarte de que el método es POST
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
