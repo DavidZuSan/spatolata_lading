@@ -1,7 +1,19 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+
 import ticketImage from "./images/nine_ice_cream.webp";
 import logoImage from "../../assets/images/logo_spatolata.png";
+import iceCreamIcon from "../../assets/icons/icon-icecream.png";
 import "./heroSection.css";
+
+const ToastContent = () => {
+  return (
+    <div className="toast-content">
+      <img src={iceCreamIcon} alt="Ice Cream Icon" className="toast-icon" />
+      <span>Email successfully registered!</span>
+    </div>
+  );
+};
 
 const DiscountTicket = () => {
   const [email, setEmail] = useState("");
@@ -28,11 +40,13 @@ const DiscountTicket = () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      console.log("Suscripción exitosa");
+      console.log("Successful subscription");
+      toast.success(<ToastContent />);
     } catch (error) {
-      console.error("Hubo un error al suscribir el correo electrónico", error);
+      console.error("There was an error subscribing to the email", error);
+      toast.error("Error subscribing. Please try again later.");
     }
-
+    F;
     setEmail("");
   };
 
@@ -66,26 +80,32 @@ const DiscountTicket = () => {
 
   return (
     <div
-      className="flex items-stretch justify-center mx-auto mb-8 mt-16 overflow-hidden rounded-lg shadow-xl bg-gradient-to-r from-orange-300 to-orange-500/60 font-montserrat"
-      style={{ width: "65%", height: "300px" }}
+      className="flex flex-col md:flex-row items-stretch justify-center mx-auto mb-8 mt-16 overflow-hidden rounded-lg shadow-xl bg-gradient-to-r from-orange-300 to-orange-500/60 font-montserrat max-w-screen-md w-4/5 md:w-4/5 lg:w-2/3"
+      style={{ height: "auto" }}
     >
-      <div className="flex-shrink-0 w-1/3 h-full overflow-hidden rounded-l-lg">
+      <div className="flex-shrink-0 w-full md:w-1/3 lg:w-1/4 h-48 md:h-auto overflow-hidden rounded-tl-lg">
         <img
           src={ticketImage}
           alt="Ice Creams Ticket"
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="flex-grow py-6 px-10">
-        <div className="text-center mb-4">
-          <img src={logoImage} alt="Logo" className="w-16 h-auto mx-auto" />
+
+      <div className="flex-grow w-full py-6 px-10 mt-4 md:mt-4">
+        <div className="text-center mb-6">
+          <img
+            src={logoImage}
+            alt="Logo"
+            className="w-16 lg:w-24 h-auto mx-auto"
+          />
         </div>
         <div className="text-center">
-          <p className="text-darkgray mb-4 font-montserrat">
+          <p className="text-darkgray mb-6 font-montserrat lg:text-xl">
             Subscribe to our newsletter and get
             <span className="font-bold text-burgundy"> special discounts!</span>
           </p>
         </div>
+
         <form onSubmit={handleEmailSubmit} className="flex flex-col">
           <input
             type="email"
@@ -93,8 +113,9 @@ const DiscountTicket = () => {
             onChange={(e) => setEmail(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Enter your email"
-            className="p-2 rounded border focus:outline-none focus:border-bodyText mb-4 text-center bg-white text-bodyText"
+            className="p-2 rounded border focus:outline-none focus:border-bodyText mb-6 text-center bg-white text-bodyText w-full"
           />
+
           <button
             type="submit"
             onClick={handleRippleEffect}

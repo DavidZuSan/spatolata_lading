@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+
 import Footer from "./components/Footer/Footer";
 import HeroSection from "./components/HeroSection/HeroSection";
 import NavBar from "./components/NavBar/NavBar";
 import TopFlavours from "./components/TopFlavours/TopFlavours";
 import ArrowUpIcon from "./assets/icons/ArrowUpIcon";
+import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 
 const App = () => {
@@ -47,6 +50,7 @@ const App = () => {
           <ArrowUpIcon />
         </button>
       )}
+      <ToastContainer position={toast.POSITION.TOP_CENTER} />
     </div>
   );
 };
