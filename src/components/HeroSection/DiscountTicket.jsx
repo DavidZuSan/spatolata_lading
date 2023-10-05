@@ -46,7 +46,6 @@ const DiscountTicket = () => {
       console.error("There was an error subscribing to the email", error);
       toast.error("Error subscribing. Please try again later.");
     }
-    F;
     setEmail("");
   };
 
