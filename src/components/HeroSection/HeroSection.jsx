@@ -24,6 +24,7 @@ const HeroSection = () => {
             href="https://deliveroo.it/en/"
             target="_blank"
             rel="noopener noreferrer"
+            className="mx-auto lg:mx-0"
           >
             <button className="bg-burgundy text-white px-4 py-2 md:px-6 md:py-3 rounded-xl mt-4 order-button shadow-md">
               Order Now

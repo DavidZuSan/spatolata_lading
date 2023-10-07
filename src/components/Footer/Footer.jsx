@@ -78,28 +78,24 @@ const Footer = () => {
 
           {/* Tercera columna */}
           <div className="text-center md:text-left">
-            <ContactLink
-              IconComponent={MapIcon}
-              href="https://maps.app.goo.gl/DjJL5CACrA9fzWe69"
-            >
-              Via Panciroli, 9 42121, Reggio Emilia, Italia
-            </ContactLink>
-
-            <hr className="border-t border-burgundy my-2" />
-            <ul className="no-bullets font-semibold text-darkgray">
-              <li className="flex items-center justify-center md:justify-start">
+            <div className="flex justify-center md:justify-start mb-2">
+              <ContactLink
+                IconComponent={MapIcon}
+                href="https://maps.app.goo.gl/DjJL5CACrA9fzWe69"
+              >
+                Via Panciroli, 9 42121, Reggio Emilia, Italia
+              </ContactLink>
+            </div>
+            <hr className="border-t border-burgundy my-2 w-full mx-auto md:mx-0" />
+            <ul className="no-bullets font-semibold text-darkgray w-full">
+              <li className="flex items-center justify-center md:justify-start w-full">
                 <ClockIcon />
                 <span className="ml-3">Lun: OPENING SOON</span>
               </li>
-              <li className="flex items-center justify-center md:justify-start ml-11">
-                Mar: OPENING SOON
-              </li>
-              <li className="flex items-center justify-center md:justify-start ml-11">
-                Mer: OPENING SOON
-              </li>
+              <li className="ml-11">Mar: OPENING SOON</li>
+              <li className="ml-11">Mer: OPENING SOON</li>
               <li className="ml-11">Mer: OPENING SOON</li>
               <li className="ml-11">Gio: OPENING SOON</li>
-              <li className="ml-11">Ven: OPENING SOON</li>
               <li className="ml-11">Sab: OPENING SOON</li>
               <li className="ml-11">Dom: OPENING SOON</li>
             </ul>
